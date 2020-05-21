@@ -1,5 +1,6 @@
 package com.example.api.entities;
 
+import com.example.api.enums.OrderStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.io.Serializable;
 import java.time.Instant;
@@ -23,6 +24,7 @@ public class Order implements Serializable {
     private Long id;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
     private Instant moment;
+    private Integer orderStatus;
 
     @ManyToOne
     @JoinColumn(name = "client_id")
@@ -31,9 +33,10 @@ public class Order implements Serializable {
     public Order() {
     }
 
-    public Order(Long id, Instant moment, User client) {
+    public Order(Long id, Instant moment, OrderStatus orderStatus, User client) {
         this.id = id;
         this.moment = moment;
+        this.orderStatus = orderStatus.getCode();
         this.client = client;
     }
 
@@ -59,6 +62,16 @@ public class Order implements Serializable {
 
     public void setMoment(Instant moment) {
         this.moment = moment;
+    }
+
+    public OrderStatus getStatus() {
+        return OrderStatus.valueOf(orderStatus);
+    }
+
+    public void setStatus(OrderStatus status) {
+        if (orderStatus != null) {
+            this.orderStatus = status.getCode();
+        }
     }
 
     @Override
