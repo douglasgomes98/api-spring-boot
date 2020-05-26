@@ -15,7 +15,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_product")
+@Table(name = "tb_product", schema = "spring")
 public class Product implements Serializable {
 
     private static final long serialVersionUID = 1L;

@@ -12,7 +12,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_payment")
+@Table(name = "tb_payment", schema = "spring")
 public class Payment implements Serializable {
 
     private static final long serialVersionUID = 1L;
