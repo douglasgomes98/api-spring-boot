@@ -8,7 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_order_item", schema = "spring")
+@Table(name = "tb_order_item", schema = "springboot")
 public class OrderItem implements Serializable {
 
     private static final long serialVersionUID = 1L;

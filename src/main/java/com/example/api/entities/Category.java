@@ -12,7 +12,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_category", schema = "spring")
+@Table(name = "tb_category", schema = "springboot")
 public class Category implements Serializable {
 
     private static final long serialVersionUID = 1L;
